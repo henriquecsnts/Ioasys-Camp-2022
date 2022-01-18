@@ -7,37 +7,68 @@
     android:background="@drawable/frame_background"
     tools:context=".Frame5Fragment">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/image_logo_blck"
-        android:layout_width="104dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="24dp"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/image_logo_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/logo_black"
+        android:drawableStart="@drawable/logo_black"
+        android:drawableEnd="@drawable/exit_icon"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/heebo_regular"
+        android:gravity="start"
+        android:text="@string/books"
+        android:textSize="28sp"
         android:tint="#FF333333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_label3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="21dp"
-        android:fontFamily="@font/heebo_regular"
-        android:text="Books"
-        android:textColor="#FF333333"
-        android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@id/image_logo_blck"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/searchview_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_logo_blck" />
+        app:layout_constraintTop_toBottomOf="@id/image_logo_black" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_view"
+        android:layout_width="328dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/card_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_bar"
+        android:progress="0"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <!--    <com.google.android.material.progressindicator.CircularProgressIndicator-->
+    <!--        android:id="@+id/progress_bar"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:indeterminateTint="@color/black"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        tools:visibility="visible" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
