@@ -55,7 +55,7 @@
         android:layout_marginStart="16dp"
         android:paddingTop="8dp"
         android:text="@string/email"
-        android:textColor="#80FFFFFF"
+        android:textColor="@color/white_50"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/edit_text1"
         app:layout_constraintTop_toTopOf="@id/edit_text1" />
@@ -81,7 +81,7 @@
         android:layout_marginStart="16dp"
         android:paddingTop="8dp"
         android:text="@string/senha"
-        android:textColor="#80FFFFFF"
+        android:textColor="@color/white_50"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/edit_text2"
         app:layout_constraintTop_toTopOf="@id/edit_text2" />
@@ -98,7 +98,7 @@
         android:fontFamily="@font/heebo_regular"
         android:text="@string/entrar"
         android:textAllCaps="false"
-        android:textColor="#FFB22E6F"
+        android:textColor="@color/wine"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/edit_text2"
         app:layout_constraintTop_toTopOf="@id/edit_text2" />

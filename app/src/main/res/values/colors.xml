@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="white_50">#80FFFFFF</color>
+    <color name="wine">#FFB22E6F</color>
+    <color name="hot_pink">#FFAB2680</color>
+    <color name="hot_pink_25">#40AB2680</color>
+    <color name="dark_gray">#FF333333</color>
+    <color name="dark_gray_20">#33333333</color>
+    <color name="black_32">#52000000</color>
+
 </resources>
