@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/05576716124/AndroidStudioProjects/Ioasys-Camp-2022/app/src/main/res/drawable/button_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/05576716124/AndroidStudioProjects/Ioasys-Camp-2022/app/src/main/res/drawable/card_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/05576716124/AndroidStudioProjects/Ioasys-Camp-2022/app/src/main/res/drawable/edit_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/05576716124/AndroidStudioProjects/Ioasys-Camp-2022/app/src/main/res/drawable/frame_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/05576716124/AndroidStudioProjects/Ioasys-Camp-2022/app/src/main/res/drawable/progress_bar.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/05576716124/AndroidStudioProjects/Ioasys-Camp-2022/app/src/main/res/layout/fragment_frame1.xml" value="0.2572463768115942" />
-        <entry key="..\:/Users/05576716124/AndroidStudioProjects/Ioasys-Camp-2022/app/src/main/res/layout/fragment_frame5.xml" value="0.3625" />
+        <entry key="..\:/Users/05576716124/AndroidStudioProjects/Ioasys-Camp-2022/app/src/main/res/layout/fragment_frame5.xml" value="0.30027173913043476" />
       </map>
     </option>
   </component>
