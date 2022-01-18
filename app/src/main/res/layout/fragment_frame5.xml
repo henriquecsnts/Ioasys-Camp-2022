@@ -14,13 +14,13 @@
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
         android:drawableStart="@drawable/logo_black"
-        android:drawableEnd="@drawable/exit_icon"
+        android:drawableEnd="@drawable/log_out_icon"
         android:drawablePadding="16dp"
         android:fontFamily="@font/heebo_regular"
         android:gravity="start"
         android:text="@string/books"
         android:textSize="28sp"
-        android:tint="#FF333333"
+        android:tint="@color/dark_gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
