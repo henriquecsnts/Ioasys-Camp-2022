@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Book_title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/heebo_regular</item>
+    </style>
+
+    <style name="Book_author">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/hot_pink</item>
+        <item name="android:fontFamily">@font/heebo_regular</item>
+    </style>
+
+    <style name="Book_description">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:fontFamily">@font/heebo_regular</item>
+    </style>
+
+</resources>

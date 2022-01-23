@@ -14,6 +14,8 @@
     <color name="hot_pink_25">#40AB2680</color>
     <color name="dark_gray">#FF333333</color>
     <color name="dark_gray_20">#33333333</color>
+    <color name="dark_gray_50">#80333333</color>
     <color name="black_32">#52000000</color>
+    <color name="gray">#FF999999</color>
 
 </resources>
