@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@id/book_title" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/number_of_pages"
+            android:id="@+id/book_pages"
             style="@style/Book_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,24 +56,24 @@
             app:layout_constraintTop_toBottomOf="@id/book_author" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/publishing_company"
+            android:id="@+id/book_editor"
             style="@style/Book_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="LOREM IPSUM"
             app:layout_constraintStart_toEndOf="@id/img_book"
-            app:layout_constraintTop_toBottomOf="@id/number_of_pages" />
+            app:layout_constraintTop_toBottomOf="@id/book_pages" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/publication_date"
+            android:id="@+id/book_date"
             style="@style/Book_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="LOREM IPSUM"
             app:layout_constraintStart_toEndOf="@id/img_book"
-            app:layout_constraintTop_toBottomOf="@id/publishing_company" />
+            app:layout_constraintTop_toBottomOf="@id/book_editor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
