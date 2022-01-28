@@ -36,9 +36,7 @@ class BookListFragment : Fragment(), BookClickListener {
         bookListAdapter = BookListAdapter(this)
         binding.rvBooks.adapter = bookListAdapter
         bookListAdapter.submitList(
-            Book.getMockListCount(
-                args.itemCount
-            )
+            Book.getMockList()
         )
     }
 
@@ -48,7 +46,7 @@ class BookListFragment : Fragment(), BookClickListener {
     }
 
     override fun onBookClickListener(book: Book) {
-        Toast.makeText(requireActivity(), book.id.toString(), Toast.LENGTH_SHORT).show()
+        BookDetailsBottomSheet.newInstance(book).show(childFragmentManager, "book")
     }
 
 }
