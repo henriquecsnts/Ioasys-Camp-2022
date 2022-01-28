@@ -7,5 +7,14 @@
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
     <string name="email_e_ou_senha_incorretos">Email e/ou senha incorretos.</string>
+    <string name="informacoes">Informações</string>
+    <string name="paginas">Páginas</string>
+    <string name="editora">Editora</string>
+    <string name="publicacao">Publicação</string>
+    <string name="idioma">Idioma</string>
+    <string name="titulo_original">Título Original</string>
+    <string name="isbn_10">ISBN-10</string>
+    <string name="isbn_13">ISBN-13</string>
+    <string name="resenha_da_editora">Resenha da Editora</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
