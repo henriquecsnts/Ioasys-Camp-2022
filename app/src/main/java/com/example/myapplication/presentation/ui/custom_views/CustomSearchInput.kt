@@ -23,7 +23,7 @@ class CustomSearchInput @JvmOverloads constructor(
         view.findViewById(R.id.et_input)
     }
 
-    private var textChangedListener: (input: String) -> Unit = {}
+    var textChangedListener: (input: String) -> Unit = {}
 
     init {
         setLayout(attrs)
