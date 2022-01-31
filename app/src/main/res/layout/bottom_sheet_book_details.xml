@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BookDetailsBottomSheet">
+    android:layout_marginBottom="24dp"
+    tools:context=".presentation.ui.fragments.BookDetailsBottomSheet">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,7 +31,6 @@
             app:layout_constraintTop_toBottomOf="@id/btn_close">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_big_book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/book_2" />
@@ -89,50 +89,50 @@
             app:layout_constraintTop_toBottomOf="@id/tv_info_label">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_label_pages"
                 style="@style/Book_info"
+                android:id="@+id/tv_book_pages"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/paginas" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_label_editor"
                 style="@style/Book_info"
+                android:id="@+id/tv_book_editor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/editora" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_label_date"
                 style="@style/Book_info"
+                android:id="@+id/tv_book_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/publicacao" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_label_language"
                 style="@style/Book_info"
+                android:id="@+id/tv_book_language"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/idioma" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_label_origin_book_name"
                 style="@style/Book_info"
+                android:id="@+id/tv_book_origin_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_original" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_label_isbn10"
                 style="@style/Book_info"
+                android:id="@+id/tv_book_isbn10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/isbn_10" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_label_isbn13"
                 style="@style/Book_info"
+                android:id="@+id/tv_book_isbn13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/isbn_13" />
@@ -153,50 +153,50 @@
             app:layout_constraintTop_toBottomOf="@id/tv_info_label">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_info_pages"
                 style="@style/Book_description"
+                android:id="@+id/tv_info_pages"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="304 páginas" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_info_editor"
                 style="@style/Book_description"
+                android:id="@+id/tv_info_editor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Editora Loyola" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_info_date"
                 style="@style/Book_description"
+                android:id="@+id/tv_info_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="2020" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_info_language"
                 style="@style/Book_description"
+                android:id="@+id/tv_info_language"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Inglês" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_info_origin_book_name"
                 style="@style/Book_description"
+                android:id="@+id/tv_info_origin_book_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Change By Design" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_info_isbn10"
                 style="@style/Book_description"
+                android:id="@+id/tv_info_isbn10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="0062856626" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_info_isbn13"
                 style="@style/Book_description"
+                android:id="@+id/tv_info_isbn13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="978-0062856623" />
@@ -216,8 +216,8 @@
             app:layout_constraintTop_toBottomOf="@id/labels_container" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_review"
             style="@style/Book_description"
+            android:id="@+id/tv_review"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
