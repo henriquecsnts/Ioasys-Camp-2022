@@ -1,15 +1,12 @@
-package com.example.myapplication.adapter
+package com.example.myapplication.presentation.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.R
 import com.example.myapplication.databinding.BookItemBinding
-import com.example.myapplication.model.Book
+import com.example.myapplication.domain.model.Book
 
 class BookListAdapter(
     private val onBookClickListener: BookClickListener

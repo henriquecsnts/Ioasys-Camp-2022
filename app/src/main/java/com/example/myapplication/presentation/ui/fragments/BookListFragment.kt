@@ -1,16 +1,15 @@
-package com.example.myapplication.fragments
+package com.example.myapplication.presentation.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.navArgs
-import com.example.myapplication.adapter.BookClickListener
-import com.example.myapplication.adapter.BookListAdapter
+import com.example.myapplication.presentation.adapter.BookClickListener
+import com.example.myapplication.presentation.adapter.BookListAdapter
 import com.example.myapplication.databinding.FragmentBookListBinding
-import com.example.myapplication.model.Book
+import com.example.myapplication.domain.model.Book
 
 class BookListFragment : Fragment(), BookClickListener {
 

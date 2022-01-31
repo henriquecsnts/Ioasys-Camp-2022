@@ -1,4 +1,4 @@
-package com.example.myapplication.custom_views
+package com.example.myapplication.presentation.ui.custom_views
 
 import android.content.Context
 import android.util.AttributeSet
@@ -20,7 +20,7 @@ class CustomSearchInput @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(R.layout.custom_search_input, this, true)
 
     private val input: TextInputEditText by lazy {
-        view.findViewById(R.id.etInput)
+        view.findViewById(R.id.et_input)
     }
 
     private var textChangedListener: (input: String) -> Unit = {}

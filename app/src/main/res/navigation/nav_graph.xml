@@ -2,12 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.myapplication.fragments.LoginFragment"
+        android:name="com.example.myapplication.presentation.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -16,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/bookListFragment"
-        android:name="com.example.myapplication.fragments.BookListFragment"
+        android:name="com.example.myapplication.presentation.ui.fragments.BookListFragment"
         android:label="fragment_book_list"
         tools:layout="@layout/fragment_book_list" >
         <argument
