@@ -27,6 +27,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Empty_list">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/dark_gray_50</item>
+        <item name="android:fontFamily">@font/heebo_regular</item>
+    </style>
+
     <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
     </style>
