@@ -1,6 +1,8 @@
 package com.example.myapplication.activity
 
 import android.app.Application
+import com.example.myapplication.di.dataModule
+import com.example.myapplication.di.dataRemoteModule
 import com.example.myapplication.di.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -11,7 +13,9 @@ class MainApplication: Application() {
         super.onCreate()
         startKoin {
             modules(
-                presentationModule
+                presentationModule,
+                dataModule,
+                dataRemoteModule
             ).androidContext(applicationContext)
         }
     }

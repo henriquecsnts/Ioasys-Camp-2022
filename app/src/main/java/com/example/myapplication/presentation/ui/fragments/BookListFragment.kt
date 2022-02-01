@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import com.example.myapplication.presentation.adapter.BookClickListener
 import com.example.myapplication.presentation.adapter.BookListAdapter
 import com.example.myapplication.databinding.FragmentBookListBinding
@@ -13,6 +12,7 @@ import com.example.myapplication.domain.exception.EmptyBookListException
 import com.example.myapplication.domain.model.Book
 import com.example.myapplication.presentation.viewmodel.BookListViewModel
 import com.example.myapplication.util.ViewState
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BookListFragment : Fragment(), BookClickListener {
 
@@ -20,7 +20,7 @@ class BookListFragment : Fragment(), BookClickListener {
     private var _binding: FragmentBookListBinding? = null
     private val binding: FragmentBookListBinding get() = _binding!!
 
-    private val viewModel: BookListViewModel by viewModels()
+    private val booksViewModel: BookListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,17 +39,17 @@ class BookListFragment : Fragment(), BookClickListener {
     private fun setBookListData() {
         bookListAdapter = BookListAdapter(this)
         binding.rvBooks.adapter = bookListAdapter
-        viewModel.search()
+        booksViewModel.search()
     }
 
     private fun configureListeners() {
         binding.editSearchView.textChangedListener = { input ->
-            viewModel.search(input)
+            booksViewModel.search(input)
         }
     }
 
     private fun addObserver() {
-        viewModel.bookListViewState.observe(viewLifecycleOwner) { state ->
+        booksViewModel.bookListViewState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is ViewState.Success -> {
                     showEmptyListError(false)

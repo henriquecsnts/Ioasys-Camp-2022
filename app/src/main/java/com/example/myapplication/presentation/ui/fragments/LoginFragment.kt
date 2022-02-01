@@ -1,23 +1,23 @@
 package com.example.myapplication.presentation.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.FragmentLoginBinding
 import com.example.myapplication.presentation.viewmodel.LoginViewModel
 import com.example.myapplication.util.ViewState
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding: FragmentLoginBinding get() = _binding!!
 
-    private val viewModel: LoginViewModel by viewModels()
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +35,7 @@ class LoginFragment : Fragment() {
     private fun setListener() {
         binding.btnEnter.setOnClickListener {
             binding.run {
-                viewModel.login(
+                loginViewModel.login(
                     editTxtEmail.text.toString(),
                     editTxtPasswd.text.toString()
                 )
@@ -50,7 +50,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun addObserver() {
-        viewModel.loggedUserViewState.observe(viewLifecycleOwner) { state ->
+        loginViewModel.loggedUserViewState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is ViewState.Success -> {
                     findNavController().navigate(
@@ -71,7 +71,7 @@ class LoginFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        viewModel.resetViewState()
+        loginViewModel.resetViewState()
         _binding = null
     }
 
