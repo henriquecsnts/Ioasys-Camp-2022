@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.example.myapplication.presentation.adapter.BookClickListener
 import com.example.myapplication.presentation.adapter.BookListAdapter
 import com.example.myapplication.databinding.FragmentBookListBinding
@@ -21,6 +22,8 @@ class BookListFragment : Fragment(), BookClickListener {
     private val binding: FragmentBookListBinding get() = _binding!!
 
     private val booksViewModel: BookListViewModel by viewModel()
+
+    private val args: BookListFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,12 +42,12 @@ class BookListFragment : Fragment(), BookClickListener {
     private fun setBookListData() {
         bookListAdapter = BookListAdapter(this)
         binding.rvBooks.adapter = bookListAdapter
-        booksViewModel.search()
+        booksViewModel.search(accessToken = args.accessToken)
     }
 
     private fun configureListeners() {
         binding.editSearchView.textChangedListener = { input ->
-            booksViewModel.search(input)
+            booksViewModel.search(input, args.accessToken)
         }
     }
 

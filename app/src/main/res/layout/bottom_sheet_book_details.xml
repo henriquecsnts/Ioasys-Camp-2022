@@ -31,9 +31,10 @@
             app:layout_constraintTop_toBottomOf="@id/btn_close">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_big_book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/book_2" />
+                tools:src="@drawable/book_2" />
 
         </com.google.android.material.card.MaterialCardView>
 
