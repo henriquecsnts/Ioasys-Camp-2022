@@ -1,14 +1,13 @@
 package com.example.myapplication.di
 
-import com.example.myapplication.data.data_source.BooksDataSource
-import com.example.myapplication.data.data_source.LoginDataSource
-import com.example.myapplication.data_remote.data_source.BooksDataSourceImpl
-import com.example.myapplication.data_remote.data_source.LoginDataSourceImpl
+import com.example.myapplication.data.data_source.remote.BooksRemoteDataSource
+import com.example.myapplication.data.data_source.remote.LoginRemoteDataSource
+import com.example.myapplication.data_remote.data_source.BooksRemoteDataSourceImpl
+import com.example.myapplication.data_remote.data_source.LoginRemoteDataSourceImpl
 import com.example.myapplication.data_remote.service.AuthService
 import com.example.myapplication.data_remote.service.BookService
 import com.example.myapplication.data_remote.utils.ApiConstants
 import com.example.myapplication.data_remote.utils.WebServiceFactory
-import okhttp3.OkHttpClient
 import org.koin.dsl.module
 
 val dataRemoteModule = module {
@@ -29,11 +28,11 @@ val dataRemoteModule = module {
 
     single { WebServiceFactory.providerHttpClient() }
 
-    single<BooksDataSource> {
-        BooksDataSourceImpl(get())
+    single<BooksRemoteDataSource> {
+        BooksRemoteDataSourceImpl(get())
     }
 
-    single<LoginDataSource> {
-        LoginDataSourceImpl(get())
+    single<LoginRemoteDataSource> {
+        LoginRemoteDataSourceImpl(get())
     }
 }

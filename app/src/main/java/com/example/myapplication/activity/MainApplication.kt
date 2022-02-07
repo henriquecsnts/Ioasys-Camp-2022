@@ -1,6 +1,7 @@
 package com.example.myapplication.activity
 
 import android.app.Application
+import com.example.myapplication.di.dataLocalModule
 import com.example.myapplication.di.dataModule
 import com.example.myapplication.di.dataRemoteModule
 import com.example.myapplication.di.presentationModule
@@ -15,7 +16,8 @@ class MainApplication: Application() {
             modules(
                 presentationModule,
                 dataModule,
-                dataRemoteModule
+                dataRemoteModule,
+                dataLocalModule
             ).androidContext(applicationContext)
         }
     }
