@@ -8,7 +8,7 @@ fun List<BookResponse>.toDomain(): List<Book> {
         Book(
             id = it.id?:"",
             name = it.name?:"",
-            author = it.author?.first()?:"",
+            author = it.author.first() ?:"",
             pages = it.pages?:"",
             editor = it.editor?:"",
             date = it.date?:"",

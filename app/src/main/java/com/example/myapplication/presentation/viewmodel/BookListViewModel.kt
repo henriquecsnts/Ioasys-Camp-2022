@@ -10,8 +10,10 @@ import com.example.myapplication.util.ViewState
 import com.example.myapplication.util.postError
 import com.example.myapplication.util.postLoading
 import com.example.myapplication.util.postSuccess
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.lang.Exception
 
 class BookListViewModel(
@@ -27,6 +29,7 @@ class BookListViewModel(
             try {
                 booksRepository.getBooks(input).collect {
                     if (it.isNotEmpty()) {
+                        saveBooks(bookList = it)
                         _bookListViewState.postSuccess(it)
                     } else {
                         _bookListViewState.postError(Exception("Algo deu errado."))
@@ -34,7 +37,20 @@ class BookListViewModel(
                 }
             } catch (err: Exception) {
                 _bookListViewState.postError(err)
+            }
+        }
+    }
 
+    private fun saveBooks(bookList: List<Book>) {
+        viewModelScope.launch {
+
+            try {
+                withContext(Dispatchers.IO) {
+                    booksRepository.saveBooks(bookList = bookList)
+                }
+                print("Success!")
+            } catch (err: Exception) {
+                print(err)
             }
         }
     }
