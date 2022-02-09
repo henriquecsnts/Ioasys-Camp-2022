@@ -22,21 +22,27 @@ class BookListViewModel(
 
     private val _bookListViewState = MutableLiveData<ViewState<List<Book>>>()
     val bookListViewState = _bookListViewState as LiveData<ViewState<List<Book>>>
-    
+
     fun search(input: String = "") {
         viewModelScope.launch {
             _bookListViewState.postLoading()
             try {
-                booksRepository.getBooks(input).collect {
-                    if (it.isNotEmpty()) {
-                        saveBooks(bookList = it)
-                        _bookListViewState.postSuccess(it)
-                    } else {
-                        _bookListViewState.postError(Exception("Algo deu errado."))
+                withContext(Dispatchers.IO) {
+                    booksRepository.getBooks(input).collect {
+                        withContext(Dispatchers.Main) {
+                            if (it.isNotEmpty()) {
+                                saveBooks(bookList = it)
+                                _bookListViewState.postSuccess(it)
+                            } else {
+                                _bookListViewState.postError(Exception("Algo deu errado!"))
+                            }
+                        }
                     }
                 }
             } catch (err: Exception) {
-                _bookListViewState.postError(err)
+                withContext(Dispatchers.Main) {
+                    _bookListViewState.postError(err)
+                }
             }
         }
     }
@@ -48,9 +54,8 @@ class BookListViewModel(
                 withContext(Dispatchers.IO) {
                     booksRepository.saveBooks(bookList = bookList)
                 }
-                print("Success!")
             } catch (err: Exception) {
-                print(err)
+                return@launch
             }
         }
     }
