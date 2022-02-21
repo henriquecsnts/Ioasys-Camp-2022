@@ -34,7 +34,7 @@ class BookListViewModel(
                                 saveBooks(bookList = it)
                                 _bookListViewState.postSuccess(it)
                             } else {
-                                _bookListViewState.postError(Exception("Algo deu errado!"))
+                                _bookListViewState.postError(Exception())
                             }
                         }
                     }
@@ -49,7 +49,6 @@ class BookListViewModel(
 
     private fun saveBooks(bookList: List<Book>) {
         viewModelScope.launch {
-
             try {
                 withContext(Dispatchers.IO) {
                     booksRepository.saveBooks(bookList = bookList)

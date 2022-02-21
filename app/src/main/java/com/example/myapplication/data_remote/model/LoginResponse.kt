@@ -9,6 +9,6 @@ data class LoginResponse(
     val birthdate: String,
     @SerializedName("gender")
     val gender: String,
-    @SerializedName("accessToken")
+    @SerializedName("id")
     val id: String
 )

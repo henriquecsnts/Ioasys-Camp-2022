@@ -7,7 +7,6 @@ import com.example.myapplication.domain.repositories.LoginRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
-import okhttp3.internal.userAgent
 
 class LoginRepositoryImpl(
     private val loginRemoteDataSource: LoginRemoteDataSource,

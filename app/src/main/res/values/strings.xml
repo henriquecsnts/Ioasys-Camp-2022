@@ -16,5 +16,6 @@
     <string name="isbn_13">ISBN-13</string>
     <string name="resenha_da_editora">Resenha da Editora</string>
     <string name="nao_encontramos_nenhum_livro_com_esses_termos">Não encontramos nenhum \nlivro com esses termos.</string>
+    <string name="lorem_ipsum">LOREM IPSUM</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

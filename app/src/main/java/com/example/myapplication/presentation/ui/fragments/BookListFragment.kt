@@ -62,6 +62,7 @@ class BookListFragment : Fragment(), BookClickListener {
                         is EmptyBookListException -> {
                             bookListAdapter.submitList(listOf())
                             showEmptyListError(true)
+                            binding.tvEmptyList.visibility = View.VISIBLE
                         }
                         else -> Unit
                     }

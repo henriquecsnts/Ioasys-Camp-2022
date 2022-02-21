@@ -4,19 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.domain.exception.LoginException
-import com.example.myapplication.domain.repositories.LoginRepository
+import com.example.myapplication.domain.model.User
+import com.example.myapplication.domain.use_cases.LoginUseCases
 import com.example.myapplication.util.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import org.koin.core.component.KoinComponent
 
-class LoginViewModel(
-    private val loginRepository: LoginRepository
-) : ViewModel() {
+class LoginViewModel : ViewModel(), KoinComponent {
 
-    private val _loggedUserViewState = MutableLiveData<ViewState<String>>()
-    val loggedUserViewState = _loggedUserViewState as LiveData<ViewState<String>>
+    private val loginUseCase: LoginUseCases by useCase()
+    private val _loggedUserViewState = MutableLiveData<ViewState<User>>()
+    val loggedUserViewState = _loggedUserViewState as LiveData<ViewState<User>>
 
     fun login(email: String, password: String) {
 
@@ -24,17 +22,18 @@ class LoginViewModel(
 
             _loggedUserViewState.postLoading()
 
-            try {
-                loginRepository.login(email, password).collect {
-                    if (it.name.isEmpty().not()) {
-                        _loggedUserViewState.postSuccess(it.accessToken)
-                    } else {
-                        _loggedUserViewState.postError(java.lang.Exception("Algo deu errado."))
-                    }
+            loginUseCase.invoke(
+                LoginUseCases.Params(
+                    email = email,
+                    password = password
+                ),
+                onSuccess = {
+                    _loggedUserViewState.postSuccess(it)
+                },
+                onError = {
+                    _loggedUserViewState.postError(it)
                 }
-            } catch (err: Exception) {
-                _loggedUserViewState.postError(err)
-            }
+            )
         }
     }
 

@@ -13,7 +13,6 @@ interface BookService {
         @Header("Authorization") accessToken: String,
         @Query("page") page: Int,
         //@Query("category") category: String
-    ):
-            Response<BooksListResponse>
+    ): Response<BooksListResponse>
 
 }
