@@ -11,7 +11,6 @@ import com.example.myapplication.databinding.FragmentLoginBinding
 import com.example.myapplication.presentation.viewmodel.LoginViewModel
 import com.example.myapplication.util.ViewState
 import org.koin.androidx.viewmodel.ext.android.getViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
 

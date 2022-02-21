@@ -20,7 +20,8 @@ class BooksRepositoryImpl(
                     emit(bookList)
                 }
             } else {
-                booksLocalDataSource.getBooks(
+                booksRemoteDataSource.getBooks(
+                    accessToken = token,
                     query = query
                 ).collect { bookList->
                     emit(bookList)

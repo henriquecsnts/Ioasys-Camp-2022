@@ -23,7 +23,7 @@ data class BookResponse(
     val isbn10: String? = "",
     @SerializedName("isbn13")
     val isbn13: String? = "",
-    @SerializedName("review")
+    @SerializedName("description")
     val review: String? = "",
     @SerializedName("category")
     val category: String? = "",
