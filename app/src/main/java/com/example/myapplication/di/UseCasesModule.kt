@@ -1,20 +1,27 @@
 package com.example.myapplication.di
 
-import com.example.myapplication.domain.core.ThreadContextProvider
-import com.example.myapplication.domain.use_cases.BookListUseCases
-import com.example.myapplication.domain.use_cases.LoginUseCases
+import LoginUseCases
+import com.example.myapplication.domain.use_cases.GetBookListUseCases
+import com.example.myapplication.domain.use_cases.SaveBookListUseCases
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import org.koin.dsl.module
 
 val useCasesModule = module {
-    single {
+    factory {
         LoginUseCases(get(), get())
     }
 
-    single {
-        BookListUseCases(get(), get())
+    factory {
+        GetBookListUseCases(get(), get())
+    }
+
+    factory {
+        SaveBookListUseCases(get(), get())
     }
 
     single {
-        ThreadContextProvider()
+        CoroutineScope(Dispatchers.IO)
     }
+
 }
