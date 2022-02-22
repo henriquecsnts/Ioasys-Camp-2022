@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.myapplication.presentation.adapter.BookClickListener
 import com.example.myapplication.presentation.adapter.BookListAdapter
 import com.example.myapplication.databinding.FragmentBookListBinding
-import com.example.myapplication.domain.exception.EmptyBookListException
+import com.example.myapplication.domain.exception.BookListException
 import com.example.myapplication.domain.model.Book
 import com.example.myapplication.presentation.viewmodel.BookListViewModel
 import com.example.myapplication.util.ViewState
@@ -59,7 +59,7 @@ class BookListFragment : Fragment(), BookClickListener {
                 }
                 is ViewState.Error -> {
                     when (state.throwable) {
-                        is EmptyBookListException -> {
+                        is BookListException -> {
                             bookListAdapter.submitList(listOf())
                             showEmptyListError(true)
                             binding.tvEmptyList.visibility = View.VISIBLE

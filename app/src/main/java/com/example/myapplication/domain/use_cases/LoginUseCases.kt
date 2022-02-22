@@ -1,5 +1,3 @@
-package com.example.myapplication.domain.use_cases
-
 import com.example.myapplication.domain.core.UseCase
 import com.example.myapplication.domain.exception.InvalidFieldException
 import com.example.myapplication.domain.model.User
@@ -8,18 +6,21 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
 class LoginUseCases(
-    scope: CoroutineScope,
-    private val repository: LoginRepository
-) : UseCase<User, LoginUseCases.Params>(scope) {
+    private val loginRepository: LoginRepository,
+    scope: CoroutineScope
+) : UseCase<User, LoginUseCases.Params>(scope = scope) {
 
-    override fun run(params: Params?): Flow<User> =
-        params?.let {
-            repository.login(email = it.email, password = it.password)
-        } ?: throw InvalidFieldException()
+    override fun run(params: Params?): Flow<User> = when {
+        params?.email.isNullOrEmpty() -> throw InvalidFieldException()
+        params?.password.isNullOrEmpty() -> throw InvalidFieldException()
+        else -> loginRepository.login(
+            email = params?.email ?: "",
+            password = params?.password ?: ""
+        )
+    }
 
     data class Params(
         val email: String,
         val password: String
     )
-
 }
